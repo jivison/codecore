@@ -1,3 +1,0 @@
-if value:
-    for:
-        print()
