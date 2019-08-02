@@ -1,6 +1,6 @@
 def maxSequence(arr):
     seqs = []
-    for n in range(len(arr[:-3])):
+    for n in range(len(arr[:-3]))   :
         seqs.append(sum(arr[n:n + 3]))
 
     return seqs
