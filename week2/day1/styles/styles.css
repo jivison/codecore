@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css");
+
+html {
+    font-family: "Source Code Pro", monospace;
+    color: black;
+    background: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    background-size: 400% 400%;
+    animation: gradiate 15s ease infinite alternate-reverse;
+    /* animation: rotate 10s linear infinite; */
+}
+
+#headers {
+    font-size: 200%;
+    /* text-align: center; */
+    padding-top: 1%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400');
+
+html {font-size: 16px;}
+
+p {margin-bottom: 1.25em;}
+
+h1, h2, h3, h4, h5 {
+  margin: 2.75rem 0 1rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 7.594em;
+}
+
+h2 {font-size: 5.063em;}
+
+h3 {font-size: 3.375em;}
+
+h4 {font-size: 2.25em;}
+
+h5 {font-size: 1.5em;}
+
+small, .text_small {font-size: 0.667em;}
+
+strong {
+    font-size: 100px;
+}
+
+
+
+
+/* Image styles */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.hero-image {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+button {
+  border-radius: 1em;
+  padding: 1em 2em;
+  border: 0px;
+}
+
+
+@keyframes gradiate {0% {background-position: 0% 50%}50% {background-position: 100% 50%}100% {background-position: 0% 50%}}

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Amaranth|IBM+Plex+Sans&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css");
+
+html {
+    background-color: white;
+    padding-bottom: 5em;
+}
+
+/* Typescaling */
+p {
+    margin-bottom: 1.25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0.5rem 0 1rem;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 4.052em;
+}
+
+h2 {
+    font-size: 2.441em;
+}
+
+h3 {
+    font-size: 1.953em;
+}
+
+h4 {
+    font-size: 1.563em;
+    color: grey;
+}
+
+h5 {
+    font-size: 1.25em;
+    color: grey;
+}
+
+h6 {
+    font-size: 0.75em;
+    color: darkgray;
+}
+
+small,
+.text_small {
+    font-size: 0.8em;
+}
+
+/* Class stylings */
+
+.regularSection {
+    text-align: center;
+    margin-top: 3em;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.regularSection p {
+    font-size: 1em;
+}
+
+.header {
+    font-family: "Amaranth", sans-serif;
+}
+
+.header hr {
+    width: 40%;
+    border-bottom: 3px black solid;
+}
+
+.subtext {
+    color: grey;
+}
+
+
+/* Link styling */
+a:link,
+a:visited {
+    color: rgb(30, 30, 30);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: darkcyan;
+}
+
+/* List styling */
+li {
+    /* list-style-type: none; */
+    list-style: disc;
+}
+
+.socialMedia i {
+    font-size: 3em;
+}
