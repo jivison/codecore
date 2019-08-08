@@ -1,0 +1,42 @@
+%html
+    %head
+        %title Awesome Answers | New Question
+        %link{:rel => "stylesheet", :type => "text/css", :href => "styles/newQuestion.css"}
+
+
+    %body
+        %header#header
+            .branding
+                %a{:href => "index.html"}
+                    %img{:src => "./awesome-answers-logo2.svg", :class => "logo"}
+            
+            
+            .nav
+                %ul.menu
+                    %li.menu-item
+                        %button.menu-button{:onclick => "location.href = './questions.html'"} Questions
+                    %li.menu-item
+                        %button.menu-button{:onclick => "location.href = './newQuestion.html'"} New Question
+                    %li.menu-item
+                        %button.menu-button{:onclick => "location.href = './signUp.html'"} Sign Up
+                    %li.menu-item
+                        %button.menu-button{:onclick => "location.href = './signIn.html'"} Sign In
+                    %li{:class => "menu-button ghost"}
+
+        %article
+            %h1 New Question
+
+            %form
+                .titleForm
+                    %h2 Title
+                    %input{:type => "text", :name => "title", :class => "forms title", :autocomplete => "off"}
+                .bodyForm
+                    %h2 Body
+                    %textarea{:type => "text", :name => "body", :class => "forms body"}
+                
+                -# %h2.form-elms Title <input type="text" name="title" class="forms title">
+                -# %h2.form-elms Body <input type="text" name="body" class="forms body">
+
+        %footer
+            .about About
+            .contact Contact

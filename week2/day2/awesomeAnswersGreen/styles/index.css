@@ -1,0 +1,34 @@
+@import url("styles.css");
+
+.splash {
+    width: 100%;
+    display: flex;
+    margin: 3em;     
+    max-height: 45vh;
+}
+
+.splash h1 {
+    font-size: 4em;
+}
+
+body {
+    background: var(--lightest);
+    display: flex;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+.quote {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-self: flex-end;
+}

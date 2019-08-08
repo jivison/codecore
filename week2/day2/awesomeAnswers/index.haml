@@ -1,0 +1,41 @@
+%html
+    %head
+        %title Awesome Answers | Home
+        %link{:rel => "stylesheet", :type => "text/css", :href => "styles/index.css"}
+
+
+    %body
+        %header#header
+            .branding
+                %a{:href => "index.html"}
+                    %img{:src => "./awesome-answers-logo2.svg", :class => "logo"}
+            
+            
+            .nav
+                %ul.menu
+                    %li.menu-item
+                        %button.menu-button{:onclick => "location.href = './questions.html'"} Questions
+                    %li.menu-item
+                        %button.menu-button{:onclick => "location.href = './newQuestion.html'"} New Question
+                    %li.menu-item
+                        %button.menu-button{:onclick => "location.href = './signUp.html'"} Sign Up
+                    %li.menu-item
+                        %button.menu-button{:onclick => "location.href = './signIn.html'"} Sign In
+                    %li{:class => "menu-button ghost"}
+        
+        
+        %article
+            .splash 
+                .header
+                    %h1 You know nothing, Jon Snow!
+                .quote
+                    %h2 A dream of Spring. All men must die. Pay the iron price. It is rare to meet a Lannister who shares my enthusiasm for dead Lannisters. Unbowed, Unbent, Unbroken.
+                    .stamps
+                        %p Asked by Jon Snow 4 months ago
+                        %p Last edited 4 months ago
+                        %p Seen 21241 times
+
+
+        %footer
+            .about About
+            .contact Contact
