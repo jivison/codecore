@@ -100,6 +100,7 @@ header {
     padding: 1%;
     border: 5px solid var(--darkest);
     transition: all 0.5s ease;
+    border-radius: 1em;
 }
 
 .card:hover{
@@ -173,6 +174,10 @@ a:active {
     border-radius: 1em;
     background: transparent;
     color: inherit;
+}
+
+.menu-button:active {
+    box-shadow: 5px 5px var(--darker); 
 }
 
 .ghost {

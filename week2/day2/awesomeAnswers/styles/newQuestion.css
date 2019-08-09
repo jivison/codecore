@@ -28,19 +28,39 @@ form {
     flex-direction: column;
     height: 35vh;
 }
-.titleForm, .bodyForm {
+.titleForm, .bodyForm, .submitForm {
     width: 50%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .bodyForm textarea {
     height: 20vh;
 }
 
-input, textarea {
-    border: 2px solid var(--darkest);
+.submitForm input {
+    width: 100%;
+}
+
+
+.submitForm input {
+    border-radius: 1em;
+    /* transition: all 0.2s ease; */
     background-color: white;
+    border: 2px solid var(--lightest);
+    padding: 0.5em;
+    font-size: 0.75em;
+    color: var(--darkest);
+    font-family: inherit;
+}
+
+.submitForm:active {
+    
+}
+
+.titleForm input, textarea {
+    background-color: white;
+    border: 2px solid var(--darkest);
     padding: 0.5em;
     font-size: 0.75em;
     color: var(--darkest);
@@ -48,7 +68,13 @@ input, textarea {
     width: 75%;
 }
 
-input:focus, textarea:focus {
+.titleForm input:focus, textarea:focus {
     outline: none;
     box-shadow: 5px 5px var(--darker);
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-self: flex-end;
 }
