@@ -22,6 +22,7 @@ h2 {
 }
 
 form {
+    margin-bottom: 3em;
     text-align: left;
     display: flex;
     justify-content: space-between;
@@ -38,24 +39,27 @@ form {
     height: 20vh;
 }
 
-.submitForm input {
+.submitForm button {
     width: 100%;
-}
-
-
-.submitForm input {
-    border-radius: 1em;
-    /* transition: all 0.2s ease; */
-    background-color: white;
-    border: 2px solid var(--lightest);
-    padding: 0.5em;
-    font-size: 0.75em;
+    padding: 0.5em 1.5em;
+    background: white;
     color: var(--darkest);
-    font-family: inherit;
+    font-size: 2rem;
+    border: 2px solid var(--darkest);
+    border-radius: 1em;
+    transition: all 0.1s ease;
 }
 
-.submitForm:active {
-    
+.submitForm button:hover {
+    background-color: var(--darker);
+    transition: all 0.1s ease;
+    box-shadow: 3px 3px var(--darkest);
+    color: var(--lightest)
+}
+
+.submitForm button:active {
+    box-shadow: none;
+    transform: translateX(3px) translateY(3px);
 }
 
 .titleForm input, textarea {

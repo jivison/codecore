@@ -11,6 +11,7 @@ html {
   box-sizing: inherit;
 }
 
+
 :root {
     --darkest: rgb(95, 33, 23);
     --darker: rgb(224, 45, 45);
@@ -128,11 +129,16 @@ button {
     transition: all 0.1s ease;
 }
 
-button:hover {
+.card button:hover {
     background-color: var(--darker);
     transition: all 0.1s ease;
-    box-shadow: 5px 5px var(--darkest);
+    box-shadow: 3px 3px var(--darkest);
     color: var(--lightest)
+}
+
+.card button:active {
+    box-shadow: none;
+    transform: translateX(3px) translateY(3px);
 }
 
 .fab {
@@ -182,15 +188,6 @@ a:active {
 
 .ghost {
     flex: 0.1;
-}
-
-.signin {
-    background: var(--lighter);
-    border-radius: 1em;
-}
-
-.signin:hover {
-    background: var(--lighter);
 }
 
 .footer-button { 
