@@ -1,8 +1,4 @@
-@import url("styles.css");
-
-body {
-    background: var(--lightest);
-}
+@import url("base.css");
 
 article {
     padding: 3em;
@@ -11,10 +7,6 @@ article {
 
 h1 {
     font-size: 3em;
-}
-
-h2 {
-    font-size: 1.5em;
 }
 
 .form-elms {
@@ -42,7 +34,7 @@ form {
 .submitForm button {
     width: 100%;
     padding: 0.5em 1.5em;
-    background: white;
+    background: var(--negative);
     color: var(--darkest);
     font-size: 2rem;
     border: 2px solid var(--darkest);
@@ -63,7 +55,7 @@ form {
 }
 
 .titleForm input, textarea {
-    background-color: white;
+    background-color: var(--negative);
     border: 2px solid var(--darkest);
     padding: 0.5em;
     font-size: 0.75em;
@@ -75,10 +67,4 @@ form {
 .titleForm input:focus, textarea:focus {
     outline: none;
     box-shadow: 5px 5px var(--darker);
-}
-
-footer {
-    display: flex;
-    justify-content: space-around;
-    align-self: flex-end;
 }

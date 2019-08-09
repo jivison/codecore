@@ -1,0 +1,170 @@
+@import url("reset.css");
+
+@import url("colours.css");
+
+/* Font-awesome */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css");
+
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Ubuntu:300&display=swap');
+
+/* Make borders count as part of width */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Header styling */
+.logo {
+    height: 10vh;
+    padding: 0.5em;
+}
+
+.branding {
+    height: 10vh;
+    width: 30%;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1%;
+    background: var(--negative);
+}
+
+.nav {
+    flex: 1;
+}
+
+.menu {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.menu-button {
+    border-radius: 0;
+    background: transparent;
+    width: 100%;
+    border-radius: 1em; 
+}
+
+.menu-button:hover {
+    box-shadow: 5px 5px var(--darkest); 
+    border-radius: 1em;
+    background: transparent;
+    color: inherit;
+}
+
+.menu-button:active {
+    box-shadow: 5px 5px var(--darker); 
+}
+
+.ghost {
+    flex: 0.1;
+}
+
+/* Footer styling */
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-self: flex-end;
+    padding: 1em 3em 1em;
+    margin: 1em 0em, 0em; 
+    margin-bottom: 0em; 
+    background: var(--negative);
+}
+
+/* Button styling */
+button {
+    width: 80%;
+    padding: 0.5em 1.5em;
+    background: var(--lighter);
+    color: var(--darkest);
+    font-size: 2rem;
+    border: none;
+    border-radius: 1em;
+    transition: all 0.1s ease;
+}
+
+/* Link styling */
+a:link, a:visited {
+    color: var(--darker);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: var(--darkest);
+}
+
+
+/* General layout styling */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header,
+article,
+footer {
+    font-size: 2em;
+    width: 100%;
+}
+
+header,
+footer {
+    min-height: 1em;
+
+}
+article {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+/* General font/colour styling */
+body {
+    font-family: "Ubuntu", sans-serif;
+    color: var(--darkest);
+    background: var(--lightest);
+}
+
+h1 {
+    font-size: 1.5em;
+    padding-bottom: 5%;
+    font-family: "Comfortaa"
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+.stamps {
+    font-size: 0.6em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.fab {
+    display: none;
+}
