@@ -1,0 +1,102 @@
+@import url("reset.css");
+/* Eric Meyer */
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+html,
+body {
+    height: 100%;
+    /* required for min-height: 100% to work on the header; alternatively, you could use min-height: 100vh; */
+}
+
+body {
+    background: lightblue;
+    font-family: Ubuntu;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header {
+    background: pink;
+    /* height: 100vh; */
+    min-height: 100%;
+    background: url(../assets/hero-ocean.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    /* Horizontal */
+    align-items: center;
+    /* Vertical */
+    flex-direction: column;
+}
+
+
+h1 {
+    margin-top: 0;
+    font-size: 4.209em;
+  }
+  
+  h2 {font-size: 3.157em;}
+  
+  h3 {font-size: 2.369em;}
+  
+  h4 {font-size: 1.777em;}
+  
+  h5 {font-size: 1.333em;}
+  
+  small, .text_small {font-size: 0.75em;}
+
+article {
+    background: yellowgreen;
+    padding: 0.125em;
+}
+
+.item {
+    background: white;
+    margin: 1em;
+    padding: 1em;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.limerick {
+    font-size: 3em;
+}
+
+/* Desktop Styles Last */
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .item {
+        background: yellow;
+        width: 50%;
+    }
+
+    article {
+        display: flex;
+        flex-direction: row;
+        padding: 3%;
+    }
+
+    .d-text, .b-text {
+        order: -1;
+    }
+}
