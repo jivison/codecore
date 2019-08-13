@@ -1,0 +1,39 @@
+@import url("base.css");
+
+
+
+.splash {
+    display: flex;
+    width: 100%;
+    margin: 3em;     
+    /* max-height: 45vh; */
+}
+
+.splash h1 {
+    font-size: 4em;
+}
+
+.quote {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1300px) {
+    .splash {
+        display: block;
+    }
+
+    .splash h1 {
+        font-size: 5em;
+    }
+
+    .splash h2 {
+        font-size: 2em;
+    }
+
+    .stamps {
+        font-size: 1em;
+    }
+}

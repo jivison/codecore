@@ -1,0 +1,89 @@
+@import url("base.css");
+
+/* Card styling */
+
+.card {
+    background: var(--negative);
+    margin: 5%;
+    padding: 3%;
+    border: 5px solid var(--darkest);
+    transition: all 0.5s ease;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    /* height: 20vh; */
+}
+
+@media only screen and (min-width: 1200px) {
+    article {
+        height: 100vh;
+    }
+    
+    .card {
+        width: 45%;
+        margin: 1%;
+        padding: 1%;
+    }
+
+}
+
+.card:hover{
+    transition: all 0.3s ease;
+    box-shadow: 5px 10px var(--darker);
+}
+
+.pullquote {
+    flex : 1;
+    font-size: 1.3em;
+}
+
+.card button {
+    margin-left: 10%;
+    background: transparent;
+    border: 2px solid var(--darkest);
+}
+
+.card button:hover {
+    background-color: var(--darker);
+    transition: all 0.1s ease;
+    box-shadow: 3px 3px var(--darkest);
+    color: var(--lightest)
+}
+
+.card button:active {
+    box-shadow: none;
+    transform: translateX(3px) translateY(3px);
+}
+
+/* .card .fab {
+    font-size: 1em;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5%;
+} */
+
+/* Special styling to include scroll to top button */
+.subfooter {
+    display: flex;
+    justify-content: space-around;
+    align-self: flex-end;
+}
+
+.footer-button { 
+    width: 25%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+footer {
+    display: initial;
+    padding: 1em 3em 1em;
+    margin: 1em 0em 0em; 
+    margin-bottom: 0em; 
+    background: var(--negative);
+}

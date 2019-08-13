@@ -1,0 +1,48 @@
+/* Colour vars */
+/* :root {
+    --darkest: rgb(95, 33, 23);
+    --darker: rgb(224, 45, 45);
+    --neutral: #CC4631;
+    --lighter: rgb(250, 107, 85);
+    --lightest: rgb(255, 158, 102);
+    --negative: white;
+} */
+
+/* alt color scheme (dark mode) */
+/* :root {
+    --darkest: rgb(255, 158, 102);
+    --darker: rgb(250, 107, 85);
+    --neutral: #CC4631;
+    --lighter: rgb(224, 45, 45);
+    --lightest: rgb(95, 33, 23);
+    --negative: black;
+} */
+
+/* alt color scheme (blue) */
+:root {
+    --darkest: rgb(23, 57, 95);
+    --darker: rgb(45, 123, 224);
+    --neutral: rgb(49, 142, 204);
+    --lighter: rgb(85, 184, 250);
+    --lightest: rgb(202, 235, 245);
+    --negative: white;
+}
+
+/* alt color scheme (blue & yellow) */
+/* :root {
+    --darkest: rgb(6, 20, 100);
+    --darker: rgb(85, 110, 250);
+    --neutral: rgb(49, 155, 204);
+    --lighter: rgb(248, 207, 25);
+    --lightest: rgb(250, 204, 0);
+    --negative: white;
+} */
+
+/* alt color scheme (nord) */
+/* :root {
+    --darkest: #88C0D0;
+    --darker: #5E81AC;
+    --lighter: #4C566A;
+    --lightest: #2E3440;
+    --negative: black;
+} */

@@ -1,0 +1,76 @@
+@import url("base.css");
+
+article {
+    padding: 3em;
+    display: block;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.form-elms {
+    padding: 0.5em;
+}
+
+form {
+    margin-bottom: 3em;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 35vh;
+}
+.titleForm, .bodyForm, .submitForm {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1600px) {
+    .titleForm, .bodyForm, .submitForm {
+        width: 100%;
+    }
+}
+
+.bodyForm textarea {
+    height: 20vh;
+}
+
+.submitForm button {
+    width: 100%;
+    padding: 0.5em 1.5em;
+    background: var(--negative);
+    color: var(--darkest);
+    font-size: 2rem;
+    border: 2px solid var(--darkest);
+    border-radius: 1em;
+    transition: all 0.1s ease;
+}
+
+.submitForm button:hover {
+    background-color: var(--darker);
+    transition: all 0.1s ease;
+    box-shadow: 3px 3px var(--darkest);
+    color: var(--lightest)
+}
+
+.submitForm button:active {
+    box-shadow: none;
+    transform: translateX(3px) translateY(3px);
+}
+
+.titleForm input, textarea {
+    background-color: var(--negative);
+    border: 2px solid var(--darkest);
+    padding: 0.5em;
+    font-size: 0.75em;
+    color: var(--darkest);
+    font-family: inherit;
+    width: 75%;
+}
+
+.titleForm input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 5px 5px var(--darker);
+}
