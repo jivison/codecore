@@ -1,5 +1,1 @@
-{
-    "items" : [
-        {"item" : "Take out the trash", "completed" : true}
-    ]
-}
+{"items":[{"item":"Add options","completed":false}]}

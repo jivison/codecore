@@ -4,6 +4,17 @@
 const menu = require("./components/menu");
 const view = require("./components/view");
 const newItem = require("./components/newItem");
+const complete = require("./components/complete");
+const deleteItem = require("./components/deleteItem");
+const options = require("./components/options");
+
+const readline = require("readline");
+const fs = require("fs");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
 /*
 Format: 
@@ -14,20 +25,31 @@ Format:
         }
     ]
 */
-const filepath = "data/todo.json";
+
+let optionsPath;
+
+try {
+    optionsPath = "data/options.todo.json";
+} catch (err) {
+    console.log("Couldn't find the options file.");
+    process.exit();
+}
 
 const quit = () => {
     console.log("Goodbye!");
     process.exit();
 };
 
+let todoOptions = JSON.parse(fs.readFileSync(optionsPath));
+
 const commands = {
     // 'shortcut' : {command : 'command', commandFunction : () => {fn()}
     v: { command: "View", commandFunction: view },
     n: { command: "New", commandFunction: newItem },
-    // cX: { command: "Complete", commandFunction: complete },
-    // dX: { command: "Delete", commandFunction: deleteItem },
-    q: { command: "Quit", commandFunction: quit }
+    c: { command: "Complete", commandFunction: complete },
+    d: { command: "Delete", commandFunction: deleteItem },
+    q: { command: "Quit", commandFunction: quit },
+    o: { command: "Options", commandFunction: options }
 };
 
-menu(commands, filepath, true);
+menu(todoOptions, commands, rl, true);

@@ -1,16 +1,37 @@
 const fs = require("fs");
 const readline = require("readline");
 
-module.exports = path => {
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-    let todo = JSON.parse(fs.readFileSync(path));
+/**
+ *
+ * @param {function} nextFn The function to be run after this function
+ * @param {array} nextParams The parameters to be passed to nextFn
+ * @returns undefined
+ */
+function newItem(rl, options, nextFn, nextParams) {
+    console.log();
 
-    rl.question("What task do you want to add?\n> ", answer => {
-        todo["items"].push({ item: answer, completed: false });
-        fs.writeFileSync(path, JSON.stringify(todo));
-        menu()
-    });
-};
+    try {
+        let todo = JSON.parse(fs.readFileSync(options.path));
+        rl.question("What task do you want to add?\n> ", answer => {
+            try {
+                todo.items.push({ item: answer, completed: false });
+                fs.writeFileSync(options.path, JSON.stringify(todo));
+                nextFn(...nextParams);
+            } catch (err) {
+                console.log(
+                    `An error occurred while trying to write to file '${
+                        options.path
+                    }'`
+                );
+                nextFn(...nextParams);
+            }
+        });
+    } catch (err) {
+        console.log(
+            `An error occurred while trying to read file '${options.path}'`
+        );
+        nextFn(...nextParams);
+    }
+}
+
+module.exports = newItem;
