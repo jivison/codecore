@@ -8,6 +8,7 @@ const complete = require("./components/complete");
 const deleteItem = require("./components/deleteItem");
 const options = require("./components/options");
 
+const pathModule = require("path");
 const readline = require("readline");
 const fs = require("fs");
 
@@ -29,7 +30,7 @@ Format:
 let optionsPath;
 
 try {
-    optionsPath = "data/options.todo.json";
+    optionsPath = fs.readFileSync("/home/john/.todorcPath").toString();
 } catch (err) {
     console.log("Couldn't find the options file.");
     process.exit();
@@ -43,7 +44,7 @@ const quit = () => {
 let todoOptions = JSON.parse(fs.readFileSync(optionsPath));
 
 const commands = {
-    // 'shortcut' : {command : 'command', commandFunction : () => {fn()}
+    // 'shortcut' : {command : 'command', commandFunction : fn}
     v: { command: "View", commandFunction: view },
     n: { command: "New", commandFunction: newItem },
     c: { command: "Complete", commandFunction: complete },
