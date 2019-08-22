@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs", {"title" : "Home"}) %>
+    <h1>Select a language:</h1>
+    <form action="/language_selected" method="POST">
+        <select name="lang">
+            <option value="en">en</option>
+            <option value="fr">fr</option>
+            <option value="es">es</option>
+        </select>
+        <input type="text" name="name" value="">
+        <input type="submit" value="Submit">
+    </form>
+<%- include("partials/footer.ejs") %>

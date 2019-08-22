@@ -1,0 +1,10 @@
+<%- include("partials/header.ejs", {"title" : "Home"}) %>
+    <% if (!todos) { %>
+        <h1>Nothing to do yet, <a href="/create_todo">add something</a>?</h1>
+    <% } else { %>
+        <% for (let todo of todos) { %>
+            <h1><%= todos.indexOf(todo) + 1 %>) <%= todo.title %></h1> <p><%= todo.body %></p>
+        <% } %>    
+        <h3><a href="/create_todo">Add another</a>?</h1>
+    <% } %>
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs", {"title" : "Login"}) %>
+    
+    <form action="/sign_in" method="POST" style="margin: 2%">
+        <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" value="" placeholder="username">
+        </div>
+        <div class="form-group">
+        <input type="submit" value="Sign In" class="btn btn-primary">
+        </div>
+    </form>
+
+<%- include("partials/footer.ejs") %>

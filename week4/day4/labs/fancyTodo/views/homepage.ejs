@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs", {"title" : "Home"}) %>
+
+    <nav class="navbar navbar-light bg-light">
+        <% if (username) { %>
+            <h5>Signed in as: <span class="font-weight-bold"><%= username %></span></h5><form method="POST" action="/sign_out"><input type="submit" class="btn btn-primary" value="Sign Out"></button></form>
+        <% } else { %>
+            <h5>Not signed in</h5><button class="btn btn-primary" onclick="window.location.href = '/login'">Sign In</button>
+        <% } %>
+    </nav>
+
+    <h1 class="text" style="margin: 1%;">Todo:</h1>
+
+    <% if (!todos) { %>
+            <div class="card">
+            <div class="card-body">
+            <h3 class="card-title">Nothing to do yet,</h3>
+            <button class="btn btn-primary" onclick="window.location.href = '/create_todo'">add something?</button>
+            </div>
+            </div>
+    <% } else { %>
+        <% for (let todo of todos) { %>
+            <div class="card">
+            <div class="card-body">
+            <h3 class="card-title"><%= todos.indexOf(todo) + 1 %>) <%= todo.title %></h5>
+            <p class="card-text"><%= todo.body %></p>
+            </div>
+            </div>
+        <% } %>    
+            <div class="card">
+            <div class="card-body">
+            <button class="btn btn-primary" onclick="window.location.href = '/create_todo'">Add another?</button>
+            </div>
+            </div>
+        
+    <% } %>
+<%- include("partials/footer.ejs") %>
