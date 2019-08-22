@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs", {title: "Car Status"}) %>
+        <h1>Car Status</h1>
+        <h2>Your car's condition: <span style="color:<%=color%>"><%= condition %><span></h2>
+        <form>
+            <label for="year" style="padding-right: 5%;">Year</label>
+            <%# <input type="text" name="year" value=""> %>
+            <select name="year">
+                <option selected disabled> Please choose a year...</option>
+                <% for (let index = 1950; index <= 2050; index++) { %>
+                    <option value="<%= index %>"><%= index %></option>
+                <% } %>
+            </select>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+<%- include("partials/footer.ejs") %>

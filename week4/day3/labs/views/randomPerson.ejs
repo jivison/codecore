@@ -1,0 +1,9 @@
+<%- include("partials/header.ejs", {title: "Random Person"}) %>
+        <h1>Random Person</h1>
+        <form>
+            <label for="csvPeople">Comma Separated People</label>
+            <input type="text"  name="csvPeople"></input>
+            <input type="submit" value="Submit">
+        </form>
+        <h3>The winner is: <%= winner %></h3>
+<%- include("partials/footer.ejs") %>

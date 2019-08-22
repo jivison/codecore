@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs", {title: "Fizzbuzz"}) %>
+        <h1>Fizz Buzz</h1>
+        <form>
+            <label for="num1">Number 1</label>
+            <input type="text"  name="num1"></input>
+            <label for="num2">Number 2</label>
+            <input type="text"  name="num2"></input>
+            <input type="submit" value="Submit">
+        </form>
+        <div style="padding: 1%;">
+        <% for (let number of fizzbuzzArray) { %>
+        <p> <%= number %> </p>
+        <% } %>
+        </div>
+<%- include("partials/footer.ejs") %>

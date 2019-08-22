@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs", {title: "Directory Lister"}) %>
+        <h1>Directory Lister</h1>
+        <h2>Directories/files powering this site:</h2>
+        <div style="padding-left: 1%">
+        <ul style="list-style-type: none">
+        <li>localhost:3030</li>
+        <% for (let dir of directoryArray) { %>
+        <li><p> <%= (directoryArray.indexOf(dir) === directoryArray.length - 1) ? "└──" : "├──" %> <%= dir %> </p></li>
+        <% } %>
+        </u;>
+        </div>
+<%- include("partials/footer.ejs") %>
+
+
+<%#  %>

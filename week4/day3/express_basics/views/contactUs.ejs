@@ -1,0 +1,33 @@
+<%- include("./partials/header.ejs") %>
+    <body>
+        <!-- When a form is submitted, an http GET request is made by default -->
+        <form action="/thank_you">
+            <div>
+                <label for="name">Name</label>
+                    <input type="text" name="name" value="">    
+            </div>
+            <div>
+                <label for="favouriteColour">Favourite Colour</label>
+                    <input type="color" name="favouriteColour" value="">
+            </div>
+            <div>
+                <label for="message">Message</label>
+                    <textarea name="message"></textarea>
+            </div>
+            <br>
+            <% 
+                const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+            %>
+            <% for (let day of days) { %>
+                <input
+                    type="radio"
+                    name="favouriteDay"
+                    value="<%= day %>"
+                >
+                <label for="<%= day %>"><%= day %></label>
+                <br>
+                <% } %>
+            <br>
+            <input type="submit" value="Send">
+        </form>
+<%- include("./partials/footer.ejs") %>
