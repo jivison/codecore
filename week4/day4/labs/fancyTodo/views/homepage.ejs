@@ -10,7 +10,7 @@
 
     <h1 class="text" style="margin: 1%;">Todo:</h1>
 
-    <% if (!todos) { %>
+    <% if (!todos[username]) { %>
             <div class="card">
             <div class="card-body">
             <h3 class="card-title">Nothing to do yet,</h3>
@@ -18,10 +18,10 @@
             </div>
             </div>
     <% } else { %>
-        <% for (let todo of todos) { %>
+        <% for (let todo of todos[username]) { %>
             <div class="card">
             <div class="card-body">
-            <h3 class="card-title"><%= todos.indexOf(todo) + 1 %>) <%= todo.title %></h5>
+            <h3 class="card-title"><%= todos[username].indexOf(todo) + 1 %>) <%= todo.title %></h5>
             <p class="card-text"><%= todo.body %></p>
             </div>
             </div>

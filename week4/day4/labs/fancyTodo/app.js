@@ -12,9 +12,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use((req, res, next) => {
     // if (req.cookies.todos) {
-        res.locals.todos = req.cookies.todos;
+    res.locals.todos = req.cookies.todos;
     // } else {
-        // res.locals.todos = [];
+    // res.locals.todos = [];
     // }
     res.locals.username = req.cookies.username;
     next();
@@ -38,39 +38,12 @@ app.get("/login", (req, res) => {
 });
 
 app.post("/todo_created", (req, res) => {
-    console.log(`%%%%%%%%$`);
-    // console.log(storeTodo(
-    //     res.locals.username,
-    //     { body: req.body.body, title: req.body.title },
-    //     res.locals.todos
-    // ));
-
-    // res.cookie("testcookie", storeTodo(
-    //     res.locals.username,
-    //     { body: req.body.body, title: req.body.title },
-    //     res.locals.todos
-    // ))
-
-    // res.cookie(
-    //     "todos",
-    //     storeTodo(
-    //         res.locals.username,
-    //         { body: req.body.body, title: req.body.title },
-    //         res.locals.todos
-    //     ),
-    //     { maxAge: new Date(cookieMaxAge) }
-    // );
-    //         console.log("Cookies");
-    //         console.log(req.cookies.todos);
     res.cookie(
         "todos",
-        res.locals.todos
-            ? res.locals.todos.concat([
-                  { body: req.body.body, title: req.body.title }
-              ])
-            : [{ body: req.body.body, title: req.body.title }],
+        storeTodo({ body: req.body.body, title: req.body.title }, res, req),
         { maxAge: new Date() }
     );
+
     res.redirect("/");
 });
 

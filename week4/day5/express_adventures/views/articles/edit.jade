@@ -1,0 +1,15 @@
+include ../includes/header.jade
+
++custom-header("New Article")
+
+article
+
+    form(action=`/articles/${article.id}`   , method="POST")
+        div(class="form-group mb-3")
+            label(for="title") Title
+            input.form-control(type="text", name="title", autocomplete="off", value=article.title)
+        div(class="form-group mb-3")
+            label(for="content") Content
+            textarea.form-control(name="content")= article.content
+        input(type="hidden", value="PATCH", name="_method")
+        input(type="submit", value="Update", class="btn btn-primary")

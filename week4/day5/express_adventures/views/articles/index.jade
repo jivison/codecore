@@ -1,0 +1,12 @@
+include ../includes/header.jade
+
++custom-header("Articles")
+
+article
+
+    each article in articles
+        a(href="/articles/#{article.id}")
+            li(class="list-group-item list-group-item-action list-group-item-primary")= article.title
+
+    a(href="/articles/new")
+        li(class="list-group-item list-group-item-action list-group-item-info") New Article

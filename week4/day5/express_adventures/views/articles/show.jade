@@ -1,0 +1,19 @@
+include ../includes/header.jade
+
++custom-header("Article " + article.id)
+
+article
+    - let title = `${article.title}`
+    h2= title
+        span &nbsp;
+        span= article.viewCount
+    p= article.content
+
+    p Subitted by: 
+        span.font-weight-bold= article.username
+
+    form(action="/articles/#{article.id}", method="POST")
+        input(type="hidden", value="DELETE", name="_method")
+        input.btn.btn-danger(type="submit", value="Delete")
+    
+    a.btn.btn-info(href="/articles/#{article.id}/edit") Edit

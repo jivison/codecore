@@ -1,0 +1,11 @@
+include ./includes/header.jade
+
++custom-header("Sign In")
+
+article
+    form(action="/sign_in", method="POST")
+        div.form-group
+            label(for="username") Username
+            input.form-control(type="text", name="username", value="", placeholder="username")
+        div.form-group
+            input(class="btn btn-primary", type="submit", value="Sign In")
