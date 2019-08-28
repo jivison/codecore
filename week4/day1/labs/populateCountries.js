@@ -28,7 +28,8 @@ knex.insert(scrub(countries), ["id", "name", "code"])
     .then(returning => {
         console.log(`Populated table with ${returning.length} items`);
         knex.destroy();
-    }).catch(err => {
+    })
+    .catch(err => {
         console.log(err);
         knex.destroy();
     });
