@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  get "/questions/new", {to: "questions#new", as: :new_question}
+  
+  get 'questions/new'
+
+  get 'questions/:id', {to: "questions#show", as: :question }
+
+  post 'questions', {to: 'questions#create', as: :questions}
+
+  get '/questions', {to: "questions#index"}
 
   resources :questions
 

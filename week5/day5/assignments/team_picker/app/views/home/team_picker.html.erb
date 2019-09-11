@@ -1,0 +1,19 @@
+
+<article>
+    <div>
+        <%= form_tag("team_picker", class: "team_picker", method: "post") do %>
+            <%= label_tag(:team_members, "Team Members") %>
+            <%= text_field_tag(:team_members) %>
+
+            <%= submit_tag("Pick Winner") %>
+
+        <% end %>
+
+        <% if params[:team_members] %>
+            <h2> The winner is: <span style="font-weight: 800">
+                <%= params[:team_members].split(/ *\,/).sample %></span>
+            </h2>
+        <% end %>
+
+    </div>
+</article>
