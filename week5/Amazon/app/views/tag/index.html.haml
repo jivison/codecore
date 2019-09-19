@@ -1,0 +1,6 @@
+%article
+  - @tags.each do |tag|
+    %a{href: products_path(tag: tag.name)}
+      %p
+        = tag.name
+

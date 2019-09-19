@@ -28,11 +28,20 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all.sort_by { |product| product.title }
+    if params[:tag]
+      @tag = params[:tag]
+      @products.select! { |product| product.tags&.map(&:name).include? params[:tag] }
+    end
   end
 
   def show
     @reviews = @product.reviews
     @review = Review.new
+    @like_hash = Like.all.select { |like| like.user == current_user }.inject({}) do |acc, like|
+      acc[like.review.id] = like
+      acc
+    end
+    @favourite = Favourite.find_by(user: current_user, product: @product)
   end
 
   def destroy
@@ -46,7 +55,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit :title, :description, :price
+    params.require(:product).permit :title, :description, :price, { tag_ids: [] }
   end
 
   def authorize!

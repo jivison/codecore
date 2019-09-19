@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Amazon
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_pack_tag 'application'
+  %body
+    .navbar
+      %ul.menu
+        %li.ghost
+        %li.menu-item
+          %a{:href => "/home/index"} Home
+        %li.menu-item
+          %a{:href => "/home/about"} About
+        %li.menu-item
+          %a{:href => "/products/new"} New Product
+        %li.menu-item
+          %a{:href => "/products"} Products
+        %li.menu-item
+          %a{:href => tag_index_path} Discover
+        - if current_user.present?
+          %p
+            Signed in as #{current_user&.full_name}
+          = link_to 'Sign Out', :sessions, method: :delete
+        - else
+          = link_to 'Sign In', :new_session
+          = link_to 'Sign Up', :new_user
+        %li.ghost
+    = yield

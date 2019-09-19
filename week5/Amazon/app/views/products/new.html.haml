@@ -1,0 +1,6 @@
+%article
+  - @product.errors.any?
+  %ul
+    - @product.errors.full_messages.each do |msg|
+      %p.error-msg= msg
+  = render 'form'

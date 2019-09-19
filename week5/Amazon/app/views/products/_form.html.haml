@@ -1,0 +1,17 @@
+= form_for @product, :html => {class: "new-product-form"} do |f|
+  = f.label :title
+  = f.text_field :title
+
+  = f.label :description
+  = f.text_area :description
+
+  = f.label :price
+  = f.text_field :price
+
+  .tags
+    = f.collection_check_boxes :tag_ids, Tag.order(name: :asc), :id, :name do |b|
+      .tag_wrapper
+        = b.check_box
+        = b.text.humanize
+
+  = f.submit

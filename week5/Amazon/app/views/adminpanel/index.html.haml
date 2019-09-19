@@ -1,0 +1,21 @@
+%article
+  .stats{:style => "margin-bottom: 1em"}
+    %h2 Admin Panel
+    %h3
+      Amazon has #{@products.count} products
+    %h3
+      Amazon has #{@reviews.count} reviews
+    %h3
+      Amazon has #{@users.count} users
+  .products
+    %h3 Products
+    - @products.each do |product|
+      .product
+        = product.id
+        | #{link_to product.title, product_path(product)}
+  .users
+    %h3 Users
+    - @users.each do |user|
+      .user
+        = user.id
+        | #{user.full_name} (#{user.email})

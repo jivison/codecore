@@ -62,3 +62,7 @@ small,
 article {
     padding: 1em;
 }
+
+.favourite-link {
+    font-size: 0.75em;
+}

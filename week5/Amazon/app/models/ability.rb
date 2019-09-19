@@ -32,6 +32,7 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
     alias_action :create, :read, :update, :destroy, :edit, :delete, :hide, to: :crud
+    alias_action :vote, :switch_up, :switch_down, to: :_vote
 
     can :crud, Review do |review|
       user == review.user
@@ -39,6 +40,34 @@ class Ability
 
     can :crud, Product do |product|
       user == product.user
+    end
+
+    can :crud, NewsArticle do |news_article|
+      user == news_article.user 
+    end
+
+    can :like, Review do |review|
+      user.persisted? && user != review.user
+    end
+
+    can :destroy, Like do |like|
+      like.user == user
+    end
+
+    can :favourite, Product do |product|
+      user.persisted? && user != product.user
+    end
+
+    can :destroy, Favourite do |favourite|
+      favourite.user == user
+    end
+
+    can :_vote, Review do |review|
+      user.persisted? && user != review.user
+    end
+
+    can :destroy, Vote do |vote|
+      vote.user == user
     end
 
     if user.is_admin?

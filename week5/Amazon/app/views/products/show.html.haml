@@ -1,0 +1,93 @@
+%article
+
+  %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css", :rel => "stylesheet"}
+    
+  %h3
+    = @product.title
+    
+    %span.author by #{@product.user.full_name}
+    %span.favourite-link
+      - if @favourite.present? && can?(:favourite, @product)
+        = link_to '<i class="fas fa-heart"></i>'.html_safe, favourite_path(@favourite), method: :delete
+      - elsif can?(:favourite, @product)
+        = link_to '<i class="far fa-heart"></i>'.html_safe, product_favourites_path(@product), method: :post
+  
+  %h4
+    Price $#{'%.2f' % @product.price}
+  
+  %p.description= @product.description
+
+  %p= @product.tags.map(&:name).join(", ")
+
+  - if can?(:crud, @product)
+    = link_to 'Edit', edit_product_path(@product)
+    = link_to 'Delete', product_path(@product), method: :delete, data: {confirm: "Are you sure?"}
+
+  %h3 Leave a review!
+  .form
+    - if @review.errors.any?
+      %ul
+        - @review.errors.full_messages.each do |msg|
+          %li.error-msg= msg
+
+    = form_with model: [@product, @review], local: true do |f|
+    
+      %div
+        = f.label :body
+        = f.text_area :body
+    
+      %div
+        = f.label :rating
+        = f.text_field :rating
+    
+      = f.submit
+  
+  %h3 Reviews
+  - @reviews.each do |review|
+    - unless review.is_hidden? && !can?(:hide, review)
+      %div{class: "review hidden-#{review.is_hidden?}"}
+      
+        %p{:style => "font-weight: 900"}
+          = review.rating
+          Star
+          %span.author by #{review.user.full_name}
+        
+        %p= review.body
+        - if can?(:crud, review)
+          = link_to('Destroy',  product_review_path(@product, review),  method: :delete, data: { confirm: 'Are you sure?' })
+        
+        - if can?(:hide, review)
+          - if review.is_hidden
+            = link_to 'Unhide', hide_review_path(review)
+          - else
+            = link_to 'Hide', hide_review_path(review)
+        
+        - if can?(:like, review)
+          %div
+            - like = @like_hash[review.id]
+            - if like.present?
+              = link_to '<i class="fas fa-thumbs-up"></i>'.html_safe, like_path(like), method: :delete
+            - else
+              = link_to '<i class="far fa-thumbs-up"></i>'.html_safe, product_review_likes_path(@product, review), method: :post
+
+        %div= pluralize review.likers.count, "like"
+        %p Score: #{review.votes.inject(0) { |score, vote| score + (vote.is_up ? 1 : -1) }}
+
+
+        - if can?(:_vote, review)
+          - vote = Vote.find_by(user: current_user, review: review)
+          %div
+            - if vote.present? && vote.is_up
+              %i(class="fas fa-arrow-alt-circle-up")
+              = link_to('<i class="far fa-dot-circle"></i>'.html_safe, vote_path(vote), method: :delete)
+              = link_to '<i class="far fa-arrow-alt-circle-down"></i>'.html_safe, vote_down_path(review, vote), method: :post
+              
+            - elsif vote.present? && !vote.is_up
+              = link_to '<i class="far fa-arrow-alt-circle-up"></i>'.html_safe, vote_up_path(review, vote), method: :post
+              = link_to('<i class="far fa-dot-circle"></i>'.html_safe, vote_path(vote), method: :delete)
+              %i(class="fas fa-arrow-alt-circle-down")
+
+            - else
+              = link_to '<i class="far fa-arrow-alt-circle-up"></i>'.html_safe, product_review_votes_path(@product, review, is_up: true), method: :post
+              = link_to '<i class="far fa-arrow-alt-circle-down"></i>'.html_safe, product_review_votes_path(@product, review, is_up: false), method: :post
+        

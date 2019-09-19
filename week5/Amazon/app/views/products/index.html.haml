@@ -1,0 +1,17 @@
+%article
+  %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css", :rel => "stylesheet"}/
+
+  - if @tag.present?
+    %h1 Products: #{@tag}
+    = link_to('See all products', :products)
+  -else
+    %h1 All Products 
+    = link_to 'New Product', :new_product
+  %br/
+  %hr/
+  - @products.each do |product|
+    %a{href: product_path(product)}
+      %p
+        = product.title
+        - if Favourite.find_by(user: current_user, product: product)&.present?
+          %i.fas.fa-heart

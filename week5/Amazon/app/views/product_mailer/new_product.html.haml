@@ -1,0 +1,16 @@
+%h2 Hello, #{@user.first_name}
+%h3 Your product, #{@product.title} was created successfully!
+
+
+.product
+    %h4 #{@product.title}
+    %h5 $#{'%.2f' % @product.price}
+
+    %p #{@product.body}
+    %p
+        View your newly created product 
+        %a{href: product_path(@product)}
+            here
+
+%p Cheers,
+%p &nbsp;&nbsp;&nbsp;&nbsp;The Amazon Team

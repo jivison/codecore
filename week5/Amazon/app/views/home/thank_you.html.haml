@@ -1,0 +1,7 @@
+%article
+  %h1 Thank You!
+  %h5
+    Thanks #{params["name"]}! Your message has been received as:
+  %h5{:style => "font-family: monospace; margin: 1em"}= params["message"]
+  %h5
+    from #{params["email"]}

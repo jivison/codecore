@@ -1,0 +1,9 @@
+%h1 Sign In
+= form_with url: :sessions, local: true do |f|
+  %div
+    = f.label :email
+    = f.email_field :email
+  %div
+    = f.label :password
+    = f.password_field :password
+  = f.submit "Sign In"
