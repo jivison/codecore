@@ -5,9 +5,9 @@ Your product, #{@product.title} was created successfully!
 #{@product.title}
 $#{'%.2f' % @product.price}
 
-#{@product.body}
+#{@product.description}
 
-View your newly created product at #{product_path(@product)}
+View your newly created product at #{product_url(@product)}
 
 Cheers,
 The Amazon Team

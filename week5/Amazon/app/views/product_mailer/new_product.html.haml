@@ -2,15 +2,14 @@
 %h3 Your product, #{@product.title} was created successfully!
 
 
-.product
+.product{style: "padding: 1em"}
     %h4 #{@product.title}
     %h5 $#{'%.2f' % @product.price}
 
-    %p #{@product.body}
+    %p #{@product.description}
     %p
         View your newly created product 
-        %a{href: product_path(@product)}
-            here
+        = link_to('here', product_url(@product))
 
 %p Cheers,
 %p &nbsp;&nbsp;&nbsp;&nbsp;The Amazon Team
