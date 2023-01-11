@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "knex": "^0.19.2",
+    "knex": "^2.4.0",
     "pg": "^7.12.1"
   },
   "devDependencies": {},
